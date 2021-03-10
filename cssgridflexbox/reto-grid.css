@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        "title title title title"
+        "img img img img"
+        "text text text text"
+        "buttons buttons buttons buttons";
+    background-color: cyan;
+    height: 520px;
+    width: 500px;
+    margin: auto;
+    margin-top: 80px;
+    grid-gap: 20px;
+    justify-items: center;
+}
+
+.title {
+    grid-area: title;
+    color: black;
+}
+
+.img {
+    grid-area: img;
+}
+
+.text {
+    grid-area: text;
+    padding-inline-end: 20px;
+    padding-inline-start: 20px;
+    padding-block-start: 20px;
+    padding-block-end: 20px;
+    text-align: justify;
+}
+
+.buttons {
+    grid-area: buttons;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        "button1 buton2 icons icons";
+    width: inherit;
+}
+
+button {
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+    padding: 5px;
+    background-color: blueviolet;
+    color: white;
+    font-weight: bolder;
+    border-radius: 5px;
+    height: 30px;
+}
+
+.icons {
+    grid-area: icons;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.heart {
+    color: red;
+    grid-column: 1;
+    justify-self: flex-end;
+}
+
+.share {
+    grid-column: 2;
+    display: flex;
+    position: relative;
+    top: 5px;
+    left: 10px;
+}
